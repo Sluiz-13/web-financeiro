@@ -1,0 +1,3 @@
+fix: Corrige importações ausentes do React
+
+- Adiciona as importações de `useState`, `useContext` e `useEffect` que estavam faltando em vários componentes, o que causava a falha do build de produção e a tela branca no deploy.

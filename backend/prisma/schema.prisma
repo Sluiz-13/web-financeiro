@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String   @unique
+  password    String
+  departments Department[]
+  transactions Transaction[]
+  savings     Saving[]
+}
+
+model Department {
+  id        Int      @id @default(autoincrement())
+  name      String
+  user_id   Int
+  is_active Boolean  @default(true)
+  is_default Boolean @default(false)
+  user      User     @relation(fields: [user_id], references: [id])
+}
+
+model Transaction {
+  id         Int      @id @default(autoincrement())
+  title      String
+  amount     Decimal
+  type       String
+  date       DateTime
+  department String?
+  user_id    Int
+  expected   Boolean  @default(false)
+  created_at DateTime @default(now())
+  user       User     @relation(fields: [user_id], references: [id])
+}
+
+model Saving {
+  id          Int      @id @default(autoincrement())
+  amount      Decimal
+  description String?
+  date        DateTime
+  user_id     Int
+  user        User     @relation(fields: [user_id], references: [id])
+}

@@ -1,0 +1,95 @@
+/* Estilos específicos para a página de Login */
+.login-container {
+  @apply min-h-screen flex items-center justify-center;
+  background-color: #2c3556;
+}
+
+.login-card {
+  background-color: #1c2238;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.login-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-bottom: 1px solid #3b415c;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message{
+  color: white;
+}
+
+.login-group label {
+  color: #e0e0e0;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.login-group input {
+  padding: 0.6rem;
+  border: none;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  color: white;
+  transition: border-color 0.3s;
+}
+
+.login-group input:focus {
+  outline: none;
+  border-bottom-color: #f87c8b;
+}
+
+.login-btn {
+  background-color: #c93c5a;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: #a73048;
+}
+
+.login-footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.login-footer a {
+  color: #bbbbbb;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-footer a:hover {
+  color: white;
+}
+
+@media (max-width: 400px) {
+  .login-card {
+    padding: 1.5rem;
+  }
+}

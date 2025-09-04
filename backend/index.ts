@@ -19,8 +19,7 @@ app.use(helmet());
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://controlefinanceiroweb.netlify.app',
-  'https://controle-financeiro-arf4.onrender.com'
+  'https://web-financeiro-1.onrender.com'
 ];
 
 app.use(

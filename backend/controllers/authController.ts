@@ -41,6 +41,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     });
   } catch (error) {
     console.error('Erro no registro:', error);
+    console.log('Sending 500 response for login error');
     res.status(500).json({ error: 'Erro interno no servidor' });
   }
 };
@@ -82,6 +83,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
   } catch (error) {
     console.error('Erro no login:', error);
+    console.log('Sending 500 response for login error');
     res.status(500).json({ error: 'Erro interno no servidor' });
   }
 };

@@ -17,7 +17,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
   try {
     const res = await api.post<{ token: string }>("/auth/login", {
-      email: email.trim().toLowerCase(), // <-- importantíssi
+      email: email.trim().toLowerCase(), // <-- importantíssimo
       password,
     });
 

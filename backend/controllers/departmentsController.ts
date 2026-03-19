@@ -26,7 +26,7 @@ const getDepartments = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-// Criar novo departamento
+// Criar novos departamentos
 const createDepartment = async (req: Request, res: Response): Promise<void> => {
   if (!req.user) {
     res.status(401).json({ error: 'Usuário não autenticado.' });
